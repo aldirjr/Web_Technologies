@@ -31,6 +31,6 @@
   $conn->close();
 
 
-  header('Location: generic.html');
+  header('Location: movie1.html');
   exit;
 ?>
