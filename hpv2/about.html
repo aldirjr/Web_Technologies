@@ -31,7 +31,7 @@
 		<!-- Main -->
 			<section id="main" >
 				<div class="inner">
-					<p style="text-align:center;"><img src="images/aboutme.jpg" alt="website creators picture" width="300" height="300" style="opacity:0.6" /></p>
+					<p style="text-align:center;"><img src="images/aboutme.jpg" alt="website creators picture" width="300" height="300" style="opacity:0.6"/></p>
 
 					<p style="text-align:center;">My name is <strong>Aldir Jose Borelli Junior</strong>.<br> Brazilian, living in Sydney/Australia, studying Master of Information Technology at the Western Sydney University.
 					<p>
@@ -60,6 +60,10 @@
 						... to be continued
 					</p>
 					<br>
+					<div><p id="hoverMe">
+						<h1><center><a href="docs/BorelliJr_CV_complete.pdf" onclick="hireMe()" download>DOWNLOAD MY CV <img src="images/clip.png" alt="attachment icon" width="30" height="30"/> ! </a></center></h1><br>
+					</p></div>
+
 				</div>
 			</section>
 
@@ -68,27 +72,15 @@
 				<div class="inner">
 					<header>
 						<h2>Get in touch!</h2>
+						<h2>     
+							<a href="mailto:aldirjr@gmail.com"><img src="images/email.png" alt="author's email" width="40" height="40"/></a> &nbsp; &nbsp; &nbsp;     
+							<a href="http://www.linkedin.com/aldirjr"><img src="images/linkedin.png" alt="authors linkedin webpage" width="40" height="40"/></a> &nbsp; &nbsp; &nbsp;
+							<a href="http://www.facebook.com/aldirjr"><img src="images/facebook.png" alt="author's facebook webpage" width="40" height="40"/></a>
+						</h2>
 					</header>
-					<form method="post" action="received.php">
-						<div class="field half first">
-							<label for="name">Name</label>
-							<input type="text" name="name" id="name" />
-						</div>
-						<div class="field half		">
-							<label for="email">email</label>
-							<input type="text" name="email" id="email" />
-						</div>
-						<div class="field">
-							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="2">
-							</textarea>
-						</div>
-						<ul class="actions">
-							<li><input type="submit" value="Send Message" class="alt" /></li>
-						</ul>
-					</form>
 					<div class="copyright">
-						&copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images <a href="https://unsplash.com/">Unsplash</a>
+						&copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>.
+						<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"         title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"         title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 					</div>
 				</div>
 			</section>
@@ -98,6 +90,11 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script type="text/javascript">
+				var x = document.getElementById("hoverMe");
+				function hireMe(){
+					alert("You are free to get in contact at anytime! ps: HIRE ME! :) ");
+				}
+			</script>
 	</body>
 </html>

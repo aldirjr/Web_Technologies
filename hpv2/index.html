@@ -86,20 +86,81 @@
 						  </tr>
 					</table>
 
+					<ul class="actions">
+						<li><a href="movies.html" class="button alt">Learn More</a></li>
+					</ul>
+
 				</div>
 			</section>
 
 		<!-- Three -->
-			<section id="three">
+			<section id="one">
 				<div class="inner">
-					<article>
-						<div class="content">
+					<header>
+						<h2 id="ticketB">Ticket boxes</h2>
+					</header>
+					<p>
+					<form action="#ticketB" method="post">
+					<label>Check the movies ticket box: </label>
+					
+						<select name = "boxOffice" style="width:40%" onchange="completeTB()">
+							<option selected value="0">Choose a movie...</option>
+							<option value="1">Harry Potter and the Philosophers Stone</option>
+							<option value="2">Harry Potter and the Chamber of Secrets</option>
+							<option value="3">Harry Potter and the Prisoner of Azkaban</option>
+							<option value="4">Harry Potter and the Goblet of Fire</option>
+							<option value="5">Harry Potter and the Order of the Phoenix</option>
+							<option value="6">Harry Potter and the Half-Blood Prince</option>
+							<option value="7">Harry Potter and the Deathly Hallows part 1</option>
+							<option value="8">Harry Potter and the Deathly Hallows part 2</option>
+						</select><br>
+						<input class="button alt" type="submit" name="submit"/>
+					</form>
+					</p>
+					<div id=tbInfo>
+						<?php
+						
+							if(isset($_POST['submit'])){
+								$selected_val = $_POST['boxOffice'];  		// Storing Selected Value In Variable
+								if($selected_val != "0"){
 
-							<ul class="actions">
-								<li><a href="movies.html" class="button alt">Learn More</a></li>
-							</ul>
+									$servername = "localhost";
+									$username = "root";
+									$password = "";
+									$dbname = "wsu_wt";
+									
+									// Create connection
+									$conn = new mysqli($servername, $username, $password, $dbname);
+									
+									// Check connection
+									if ($conn->connect_error) {
+										die("Connection failed: " . $conn->connect_error);
+									} 
+
+									$sql = "SELECT title, runtime, budget, openWeek, gross FROM boxoffice WHERE id = ".$selected_val."";
+									$result = $conn->query($sql);
+									if($result->num_rows > 0){
+										while ($row = $result->fetch_assoc()){
+											$budget1 =  number_format($row["budget"], 0, '.', ',');
+											$openWeek1 =  number_format($row["openWeek"], 0, '.', ',');
+											$gross1 =  number_format($row["gross"], 0, '.', ',');
+											echo "<strong>Title:</strong> ".$row["title"]."<br>";
+											echo "<strong>Runtime:</strong> ".$row["runtime"]."<br>";
+											echo "<strong>Budget:</strong> $".$budget1."<br>";
+											echo "<strong>Opening Weekend:</strong> $".$openWeek1."<br>";
+											echo "<strong>Worldwide Gross:</strong> $".$gross1."<br>";
+										}
+									}
+									else{
+										echo "0 results";
+									}
+									$conn -> close();
+								}
+							}
+						?>
 						</div>
-					</article>
+					</div>
+					
 				</div>
 			</section>
 
