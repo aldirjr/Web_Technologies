@@ -4,6 +4,7 @@
   $name = htmlspecialchars($_POST['name']);
   $title  = htmlspecialchars($_POST['title']);
   $message  = htmlspecialchars($_POST['message']);
+  $movieNumber  = htmlspecialchars($_POST['movieNumber']);
   echo  $say, ' ', $to;
 
   
@@ -19,8 +20,8 @@
       die("Connection failed: " . $conn->connect_error);
   } 
   
-  $sql = "INSERT INTO Comments (userName, cTitle, comment)
-  VALUES ('".$name."', '".$title."','".$message."')";
+  $sql = "INSERT INTO Comments (movieId, userName, cTitle, comment)
+  VALUES (".$movieNumber.",'".$name."', '".$title."','".$message."')";
   
   if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
@@ -31,6 +32,6 @@
   $conn->close();
 
 
-  header('Location: movie1.html');
+  header('Location: movie'.$movieNumber.'.html#Comments');
   exit;
 ?>

@@ -5,13 +5,13 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 
-<html lang="en">
+<html>
 
 <head>
 	<title>Harry Potter The Saga</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main2.css" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 
 </head>
 
@@ -33,18 +33,17 @@
 	<section id="main">
 		<div class="inner">
 			<header class="major special">
-				<h1>Harry Potter and the Philosopher’s Stone</h1>
+				<h1>Harry Potter and the Order of The Phoenix</h1>
 			</header>
 			<p><strong>GO TO:</strong> ------ <strong><a href="#About">About</a></strong> ------<strong> <a
-						href="#Storyline">Storyline</a></strong> ------ <strong><a href="#Cast">Cast</a></strong> ------
-				<strong><a href="#Awards">Awards</a></strong> ------ <strong><a
-						href="#Comments">Comments</a></strong>-----
+						href="#Storyline">Storyline</a></strong> ------ <strong><a href="#Cast">Cast</a></strong> ------ <strong><a
+						href="#Awards">Awards</a></strong> ------ <strong><a href="#Comments">Comments</a></strong>-----
 			</p>
 
-			<img src="images/hp1-banner.jpg" alt="movie picture" class="image fit" /><br>
+			<img src="images/hp5-banner.jpg" alt="movie picture" class="image fit" /><br>
 
 			<h2 id="About">About</h2><br>
-			<p>Harry Potter and the Philosopher's Stone (released in the United States, India and Pakistan as Harry
+			<p>Harry Potter and the Order of The Phoenix (released in the United States, India and Pakistan as Harry
 				Potter and the Sorcerer's Stone)[6] is a 2001 fantasy film directed by Chris Columbus and distributed by
 				Warner Bros. Pictures.[5] It is based on J. K. Rowling's 1997 novel of the same name. The film is the
 				first instalment of the Harry Potter film series and was written by Steve Kloves and produced by David
@@ -208,7 +207,7 @@
 										die("Connection failed: " . $conn->connect_error);
 									} 
 
-									$sql = "SELECT username, cTitle, cDate, comment FROM comments WHERE movieId=1";
+									$sql = "SELECT username, cTitle, cDate, comment FROM comments WHERE movieId=5";
 									$result = $conn->query($sql);
 
 									if($result->num_rows > 0){
@@ -253,7 +252,7 @@
 					<textarea name="message" id="message" rows="2">
 							</textarea>
 				</div>
-				<input type="hidden" name="movieNumber" value="1">
+				<input type="hidden" name="movieNumber" value="5">
 				<ul class="actions">
 					<li><input type="submit" value="Send Message" class="alt" /></li>
 				</ul>
